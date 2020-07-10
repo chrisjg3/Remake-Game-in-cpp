@@ -1,19 +1,17 @@
-/*
-base game ideas:
 
+// basic plan:
+// Adventure/Surivival Game.  Find a way to survive and thrive in rural area and large continent to travel. 
+//************************************************************************
+// Ideas are tentative, this will be mostly pratice for backend, 
+// so game will be mostly text-based, although maybe some frontend can come
+// in the future.
+//************************************************************************
 
-Haven't typed much code until I can think of some ideas.  
-I want to change it a bit from the Python type game, maybe add some random generation.
-*/
-
-#include <iostream>
+#include "basefile.hpp"
 
 
 int main()
 {
-
-
-
     return 0;
 }
 
