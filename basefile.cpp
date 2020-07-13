@@ -1,6 +1,5 @@
 
-// basic plan:
-// Adventure/Surivival Game.  Find a way to survive and thrive in rural area and large continent to travel. 
+// Adventure/Surivival Game.  Mainly to Practice OOP, inheritiance, more dynamic memory allocation, and data structures
 //************************************************************************
 // Ideas are tentative, this will be mostly pratice for backend, 
 // so game will be mostly text-based, although maybe some frontend can come
@@ -12,6 +11,7 @@
 
 int main()
 {
+    
     return 0;
 }
 
