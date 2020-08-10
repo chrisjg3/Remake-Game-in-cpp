@@ -19,7 +19,8 @@ Attributes:
 - isPortable: bool that lets player pick it up or not
 - Owner: pointer set to entity owner, doesn't allow usage unless it points to player, or maybe counts as stealing to change idk
 
-#### Locations
+#### Map & Locations (seperate classes?)
+- I am thinking maybe all locations are objects inside one map object that is used to navigate, or maybe every entity has a location attribute which is a pointer set equal to a location.  Not sure yet
 
 
 

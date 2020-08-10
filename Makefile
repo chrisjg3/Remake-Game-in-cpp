@@ -1,0 +1,3 @@
+make game:
+
+make clean:

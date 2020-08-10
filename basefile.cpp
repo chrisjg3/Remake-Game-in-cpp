@@ -1,17 +1,19 @@
 
-// Adventure/Surivival Game.  Mainly to Practice OOP, inheritiance, more dynamic memory allocation, and data structures
-//************************************************************************
-// Ideas are tentative, this will be mostly pratice for backend, 
-// so game will be mostly text-based, although maybe some frontend can come
-// in the future.
-//************************************************************************
+// Adventure/Surivival Game.  
 
 #include "basefile.hpp"
 
+void gameSetUp();
 
 int main()
 {
+    gameSetUp();
+
     
+
+
     return 0;
 }
 
+
+void gameSetUp();
