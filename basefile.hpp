@@ -8,6 +8,4 @@
 #include <istream>
 #include <algorithm>
 
-using namespace std;
-
 #endif

@@ -1,7 +1,7 @@
 # Remake-Game
 
 ## Purpose
-Just to note, this doesn't have the end goal of being a very advanced game.  I wanted to have a fun way to practice smart pointers, linked lists, (data structures, algortihms, best practices, etc.) while I have a few weeks between classes.  I am also at the same time learning rust, so I may attempt to include some things in rust just to get used to using dynamically allocated memory in that language.
+Just to note, this isn't a project a necessarily will complete.  I wanted to have a fun way to practice smart pointers, linked lists, (data structures, algortihms, best practices, etc.) while I have a few weeks between classes.  I am also at the same time learning rust, so I may attempt to include some things in rust just to get used to using dynamically allocated memory in that language.
 
 ## Upcoming Plans / Structure:
 This is for organizing my thoughts:
