@@ -8,4 +8,6 @@
 #include <istream>
 #include <algorithm>
 
+#include "items/Item.hpp"
+
 #endif

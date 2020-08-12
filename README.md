@@ -12,12 +12,13 @@ So I am thinking of sketching out these ideas for each class:
 Attributes:
 - Inventory: with a Max size, thinking about making this an array of pointers or a linked list.
 - Skills: abstract base class of  only health,then maybe add indepent skills, all just unsigned shorts.  Mybe make it an array with each position being one?
-- Abilities: Thinking of this like attributes that effect outcomes of events in game, like a Charisma attribute meaning more likely to succeed in bartering, not sure. Maybe this will be only in derived player class.
+- Stats: Thinking of this like attributes that effect outcomes of events in game, like a Charisma attribute meaning more likely to succeed in bartering, not sure. Maybe this will be only in derived player class.
 - Some Bool showing if it can be talked to or if it is an animal or something
 
 #### Items
 - isPortable: bool that lets player pick it up or not
 - Owner: pointer set to entity owner, doesn't allow usage unless it points to player, or maybe counts as stealing to change idk
+- Quantity: Helps reduce memory used
 
 #### Map & Locations (seperate classes?)
 - I am thinking maybe all locations are objects inside one map object that is used to navigate, or maybe every entity has a location attribute which is a pointer set equal to a location.  Not sure yet
