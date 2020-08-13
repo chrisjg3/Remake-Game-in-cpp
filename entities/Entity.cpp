@@ -1,5 +1,5 @@
 
-#include "GameEntity.hpp"
+#include "Entity.hpp"
 
 Entity::Entity(unsigned short health, unsigned short healthMax, bool isPlayer)
 {
@@ -20,25 +20,29 @@ Entity::Entity(unsigned short health, unsigned short healthMax, bool isPlayer)
 }
 
 
-// Inventory related methods:
-void Entity::pickUpItem(Item&)
-{
-    if((!inventory.size()) < 30) { std::cout<<"\nInventory is full! \n"; return; }
+// // Inventory related methods:
+// void Entity::pickUpItem(Item& item)
+// {
+//     // Max size is 30 items, so needs return message if full
+//     if(!(inventory.size() < 30)) { std::cout<<"\nInventory is full! \n"; return; }
+
+//     // Next need to check if item isPortable, to see if it can be picked up
+//     if(item.getPortable() == false);
 
 
-}
+// }
 
 
 
-void Entity::dropItem(Item&)
-{
+// void Entity::dropItem(Item&)
+// {
     
-}
+// }
 
 
 
 
-bool Entity::findItem(Item&)
-{
-    
-}
+// bool Entity::findItem(Item&)
+// {
+//     // Maybe check if there is item type?
+// }

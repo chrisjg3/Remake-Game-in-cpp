@@ -1,0 +1,10 @@
+
+
+Things to remember:
+- I build inventory add to take a & then copy item for list, this means two things:
+        1. Need to have every shop have a copy, and any item on ground must be deleted after being picked up
+        2. NEED to build copy constructors for items with pointers.  Shared owner pointer won't matter as I will manually reset it.
+
+
+
+Things to do:

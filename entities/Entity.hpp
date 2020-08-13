@@ -18,6 +18,8 @@ unsigned short gameStats[3];
 // Skills effect how effective things are in-game.  Currently use (in order): Strength, Persuasion, Repairing, Animal-Handling
 unsigned short skills[4]; // Override Operator to make [] work with strings for above skills? might be easier !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
+unsigned short exp = 0;
+
 public:
 // Default Constructor
 Entity();
@@ -28,13 +30,13 @@ Entity(unsigned short health, unsigned short healthMax, bool isPlayer);
 // Copy constuctor?  How to make many enemies easy to make
 
 
-// inventory related functions
-void pickUpItem(Item&);
+// // inventory related functions
+// void pickUpItem(Item&);
 
-void dropItem(Item&);
+// void dropItem(Item&);
 
-// How do we compare items????!!! Gotta figuer out the best way to do this, maybe overload relational operators!!!!!!!!!!!!!!!!!!!!!!
-bool findItem(Item&); // Used when need to find exact item, returns true if found and used.
+// // How do we compare items????!!! Gotta figuer out the best way to do this, maybe overload relational operators!!!!!!!!!!!!!!!!!!!!!!
+// bool findItem(Item&); // Used when need to find exact item, returns true if found and used.
 
 
 };
