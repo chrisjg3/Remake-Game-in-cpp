@@ -1,3 +1,5 @@
+#include <iostream>
+
 #include "Item.hpp"
 #include "../entities/Entity.hpp"
 
@@ -7,15 +9,15 @@ class InventoryList
 {
     private:
     Item* head;
+    unsigned short size;
 
     public:
-    InventoryList() { head = nullptr; }
+    InventoryList() { head = nullptr; size = 0; }
 
     ~InventoryList(); // NEED TO DEALLOCATE MEMORY !!!!!!!!!!!!!!!!!!!!!!!
 
     // Functions for use to add or drop or find in inventory
-    // Didn't make Item a reference because need to copy it anyway, owner pointer will be reassigned anyway
-    void addItem(Item, Entity&); 
+    void addItem(Item&, Entity&); 
 
     void removeItem();
 
