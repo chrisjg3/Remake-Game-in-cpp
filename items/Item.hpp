@@ -1,6 +1,8 @@
 #ifndef ITEM_HPP
 #define ITEM_HPP
 
+#include <iostream>
+
 #include "../entities/Entity.hpp"
 
 class Item
@@ -10,6 +12,9 @@ class Item
     Entity* owner;
     
     public:
+    // Name is for displaying mainly, left public for now
+    std::string name;
+
     // Used for link lists of inventories or storage places
     Item* next; 
 

@@ -12,8 +12,13 @@ class InventoryList
     unsigned short size;
 
     public:
+    // Getsize function, just for debugging:
+    unsigned short getSize() { return size; }
+
+    // Default (And only) Constructor
     InventoryList() { head = nullptr; size = 0; }
 
+    // Destructor
     ~InventoryList(); // NEED TO DEALLOCATE MEMORY !!!!!!!!!!!!!!!!!!!!!!!
 
     // Functions for use to add or drop or find in inventory

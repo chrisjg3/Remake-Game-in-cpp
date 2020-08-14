@@ -8,3 +8,4 @@ Things to remember:
 
 
 Things to do:
+1. Do we need to pass player to inventory add? Is there a way to make this easier? (Inventory will be object inside of player so maybe not)
