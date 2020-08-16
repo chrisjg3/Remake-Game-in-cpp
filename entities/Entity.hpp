@@ -5,16 +5,12 @@
 #include <iostream>
 
 #include "../items/Item.hpp"
+#include "../items/InventoryList.hpp"
 
 
 class Entity
 {
 private:
-std::vector <Item*> inventory; // Max will be 30, figuring out based way to implement this
-
-// Three GameStats are: Health, Damage Resitance (effected by armor/items), max health (keeps track of upper bound)
-unsigned short gameStats[3]; 
-
 // Skills effect how effective things are in-game.  Currently use (in order): Strength, Persuasion, Repairing, Animal-Handling
 unsigned short skills[4]; // Override Operator to make [] work with strings for above skills? might be easier !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
@@ -28,7 +24,15 @@ Entity();
 Entity(unsigned short health, unsigned short healthMax, bool isPlayer);
 
 // Copy constuctor?  How to make many enemies easy to make
+//
 
+
+
+// Leaving invetory as public for now, not sure if I want to change this
+InventoryList inventory;
+
+// Three GameStats are: Health, Damage Resitance (effected by armor/items), max health (keeps track of upper bound)
+unsigned short gameStats[3]; 
 
 // // inventory related functions
 // void pickUpItem(Item&);

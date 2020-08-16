@@ -1,6 +1,8 @@
 
 
 Things to remember:
+- Right now, need to set up make file so that it can build in DIFFERENT DIRECTORIES
+
 - I build inventory add to take a & then copy item for list, this means two things:
         1. Need to have every shop have a copy, and any item on ground must be deleted after being picked up
         2. NEED to build copy constructors for items with pointers.  Shared owner pointer won't matter as I will manually reset it.
@@ -9,3 +11,4 @@ Things to remember:
 
 Things to do:
 1. Do we need to pass player to inventory add? Is there a way to make this easier? (Inventory will be object inside of player so maybe not)
+2. Change all .hpp to .h since they are classes

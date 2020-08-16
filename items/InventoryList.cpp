@@ -10,7 +10,7 @@ void InventoryList::addItem(Item& item, Entity& player)
     if(head == nullptr) 
     { 
         // Create item copy
-        head = new Item(item); 
+        head = &item; 
         head->setOwner(player);
         size++;
     }
@@ -24,7 +24,7 @@ void InventoryList::addItem(Item& item, Entity& player)
             last = last->next;
         }
         // Now at the end, create an item (based on reference) to attatch
-        last->next = new Item(item);
+        last->next = &item;
         // Then set the owner to player (the one with the inventory)
         last->next->setOwner(player);
         size++;

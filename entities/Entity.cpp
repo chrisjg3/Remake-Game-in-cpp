@@ -3,6 +3,7 @@
 
 Entity::Entity(unsigned short health, unsigned short healthMax, bool isPlayer)
 {
+    // debating overriding [] operator to have ["health"] or something similar, but I can't decide
     this->gameStats[0] = health;
     this->gameStats[1] = 0;
     this->gameStats[2] = healthMax;

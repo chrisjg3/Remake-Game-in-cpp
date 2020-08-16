@@ -3,11 +3,12 @@
 #define PROJECT1_H
 
 #include <iostream>
-#include <vector>
-#include <fstream>
-#include <istream>
-#include <algorithm>
+
 
 #include "items/Item.hpp"
+#include "items/InventoryList.hpp"
+#include "items/derivedItems/Healing.h"
+#include "entities/Entity.hpp"
+
 
 #endif
