@@ -17,7 +17,7 @@ void InventoryList::addItem(Item& item, Entity& player)
     else
     {
         // If code is here, then the list has items and so must be searched
-        Item* last = this->head->next;
+        Item* last = head->next;
         // Looping through until at last item, aka last has an address pointing to the Item with next == nullptr
         while(last->next != nullptr)
         {
@@ -28,6 +28,32 @@ void InventoryList::addItem(Item& item, Entity& player)
         // Then set the owner to player (the one with the inventory)
         last->next->setOwner(player);
         size++;
+    }
+    
+}
+
+// This is used to search for a specified item, it also helps with removal
+bool InventoryList::findItem()
+{
+    // NOT IMPLEMENTED YET!
+    std::cout<<"\nNOT IMPLEMENTED!!!!!!!!!!!!!";
+    return false;
+}
+
+// This is used to list the inventory, it is mainly to see items and allow the user to drop items.
+void InventoryList::listInventory()
+{
+    // First check if list even has anything on it
+    if(head == nullptr) {std::cout<<"\n There aren't any items in your inventory. \n"; }
+    else
+    {
+        Item* last = head->next;
+        int counter = 0;
+        while(last->next != nullptr)
+        {
+            std::cout<<'\n'<<++counter<<". "<<last->name;
+            last = last->next;
+        }
     }
     
 }

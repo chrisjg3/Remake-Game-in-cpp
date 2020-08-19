@@ -1,6 +1,6 @@
 #include <iostream>
 
-#include "Item.hpp"
+#include "Item.h"
 #include "../entities/Entity.hpp"
 
 // The inventory class is a linked list that is used for characters to hold items.
@@ -25,6 +25,12 @@ class InventoryList
     void addItem(Item&, Entity&); 
 
     void removeItem();
+
+    void listInventory();
+
+    void userDropItem(int);
+
+    void userUseItem(int);
 
     bool findItem();
 };

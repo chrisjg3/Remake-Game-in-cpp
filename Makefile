@@ -1,3 +1,6 @@
+vpath %.cpp ./items
+vpath %.o ./obj
+
 # Makes game executable file
 game: Item.o InventoryList.o Entity.o Healing.o basefile.o
 		g++ -std=c++11 -o game basefile.cpp Item.cpp InventoryList.cpp Entity.cpp Healing.cpp

@@ -3,7 +3,7 @@
 
 #include <iostream>
 
-#include "../Item.hpp"
+#include "../Item.h"
 
 
 // This class is for all items that can heal, they will have different names and heal amounts but that will be the only difference

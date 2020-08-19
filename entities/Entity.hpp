@@ -4,7 +4,7 @@
 #include <vector>
 #include <iostream>
 
-#include "../items/Item.hpp"
+#include "../items/Item.h"
 #include "../items/InventoryList.hpp"
 
 
