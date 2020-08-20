@@ -1,6 +1,6 @@
 // First basic set-up of game
-#ifndef PROJECT1_H
-#define PROJECT1_H
+#ifndef BASEFILE_H
+#define BASEFILE_H
 
 #include <iostream>
 

@@ -1,3 +1,6 @@
+#ifndef INVENTORYLIST_H
+#define INVENTORYLIST_H
+
 #include <iostream>
 
 #include "Item.h"
@@ -34,3 +37,5 @@ class InventoryList
 
     bool findItem();
 };
+
+#endif

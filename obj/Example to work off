@@ -1,0 +1,120 @@
+FOLDER=commons
+
+# Default to run for just `make`
+build: hello_world
+
+# Compiles the hello_world executable with dependencies on commons and hello_world out files
+hello_world: commons.o hello_world.o
+	g++ -o hello_world hello_world.o commons.o
+
+# Specific call for building the hello_world out. Written this way to update only on file update
+hello_world.o: hello_world.cpp
+	g++ -c hello_world.cpp -o hello_world.o
+
+# Same as hello_world but with folder declaration
+commons.o: $(FOLDER)/commons.cpp
+	g++ -c $(FOLDER)/commons.cpp -o commons.o
+
+# Set to run the executable file. If the file exists it runs it.
+# If the file doesn't exist or there have been changes to dependency files, then the program rebuilds.
+run: build
+	./hello_world
+
+# Cleans the executable and all out files
+clean:
+	rm -f hello_world *.o 2>/dev/null
+
+
+
+
+
+
+
+
+
+
+# Makes game executable file
+game: Item.o InventoryList.o Entity.o Healing.o basefile.o
+		g++ -std=c++11 -o game basefile.cpp Item.cpp InventoryList.cpp Entity.cpp Healing.cpp
+
+
+# This removes the object codes if need they are no longer up-to-date
+clean: Item.o InventoryList.o Entity.o Healing.o basefile.o
+		rm Item.o InventoryList.o Entity.o Healing.o basefile.o
+
+
+
+
+# Progress
+# Makes game executable file
+build: game
+
+# Compiling game
+game: Item.o InventoryList.o Entity.o Healing.o basefile.o
+	g++ -o hello_world hello_world.o commons.o
+
+Item.o: $(items)/Item.cpp
+	g++ -c Item.cpp -o Item.o
+
+Item.o: Item.cpp
+	g++ -c Item.cpp -o Item.o
+
+
+
+# I don't even know
+
+
+entities/Entity.o: entities/Entity.cpp 
+	g++ -std=c++11 -o $@ -c $<
+
+items/Item.o: items/Item.cpp 
+	g++ -std=c++11 -o $@ -c $<
+
+items/derivedItems/Healing.o: items/derivedItems/Healing.cpp 
+	g++ -std=c++11 -o $@ -c $<
+
+basefile.o: basefile.cpp 
+	g++ -std=c++11 -o $@ -c $<
+
+game: entities/Entity.o items/Item.o items/derivedItems/Healing.o basefile.o
+	g++ -std=c++11 -o $@ $^
+
+# This removes the object codes if need they are no longer up-to-date
+# clean: Item.o InventoryList.o Entity.o Healing.o basefile.o
+# 		rm Item.o InventoryList.o Entity.o Healing.o basefile.o
+
+
+
+
+# Third time
+
+FOLDER=items
+
+# Progress
+# Makes game executable file
+build: game
+
+# Compiling game
+game: InventoryList.o Item.o Entity.o Healing.o basefile.o 
+	g++ -o game $(FOLDER)/InventoryList.cpp $(FOLDER)/Item.cpp $(entities)/Entity.cpp $(FOLDER)/$(derivedItems)/Healing.cpp basefile.cpp
+
+InventoryList.o: $(FOLDER)/InventoryList.cpp
+	g++ $(FOLDER)/InventoryList.cpp $(FOLDER)/Item.cpp $(..)/$(entities)/Entity.cpp
+
+
+Item.o: $(FOLDER)/Item.cpp
+	g++ -c $(FOLDER)/Item.cpp -o Item.o
+
+basefile.o: basefile.cpp
+	g++ -c basefile.cpp -o basefile.o
+
+Entity.o: $(entities)/Entity.cpp
+	g++ -c $(entities)/Entity.cpp $(FOLDER)/InventoryList.cpp $(FOLDER)/Item.cpp -o Entity.o InventoryList.o Item.o
+
+Healing.o: $(FOLDER)/$(derivedItems)/Healing.cpp
+	g++ -c Healing.cpp Item.cpp Entity.cpp -o Healing.o Item.o Entity.o
+
+run: build
+	./game
+
+# clean:
