@@ -12,4 +12,7 @@ void Healing::use()
 
     // Then write something to console so it is clear the item was used
     std::cout<<"\nA "<<this->name<<" was used. You healed "<<this->healAmount<<"\n and now have "<<this->getOwner()->gameStats[0]<<" health.\n";
+
+    // NEED TO DELETE IT IF NOT USABLE AGAIN.  TimescanUse will be incremented down.  It should be deleted once that hits 0/
+    // I am thinking like, food will obviously have 1 use, but maybe certain bandages or something have many uses
 }

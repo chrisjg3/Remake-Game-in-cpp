@@ -27,15 +27,20 @@ class InventoryList
     // Functions for use to add or drop or find in inventory
     void addItem(Item&, Entity&); 
 
-    void removeItem();
-
+    // Lists all inventory items with numbers
     void listInventory();
 
     void userDropItem(int);
 
     void userUseItem(int);
 
-    bool findItem();
+    // Returns the node before the 'found' item it so it can be removed/editted
+    // returns nullptr if not found, so all methods that use it can check
+    // if the return was nullptr to know if found. (string name used to indenify)
+    Item* findItem(std::string);
+    // Very similar to above overloaded version, but this uses number to identify
+    // only will be used by the user, inputting the number they see in InvenotryList()
+    Item* findItem(int);
 };
 
 #endif

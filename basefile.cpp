@@ -38,7 +38,7 @@ int main()
     item.use();
 
 
-
+    // Test out the InventoryList drop function, make sure pointers are working correctly
 
 
 

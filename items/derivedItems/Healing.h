@@ -14,13 +14,14 @@ class Healing: public Item
     // This derived class only needs is a defined amount to heal by, the specific use() function, and its Constructor.
     private:
     short healAmount;
+    short timesCanUse;
 
     public:
     // Default Constructor:
     Healing();
 
     // Main Constuctor to be used:
-    Healing(std::string name, bool isPortable, short amount): Item(name, isPortable) { healAmount = amount; }
+    Healing(std::string name, bool isPortable, short amount, short timesUse = 1): Item(name, isPortable) { healAmount = amount; timesCanUse = timesUse; }
 
     void use();
 
