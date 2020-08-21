@@ -6,9 +6,9 @@
 
 
 #include "items/Item.h"
-#include "items/InventoryList.hpp"
+#include "items/InventoryList.h"
 #include "items/derivedItems/Healing.h"
-#include "entities/Entity.hpp"
+#include "entities/Entity.h"
 
 
 #endif

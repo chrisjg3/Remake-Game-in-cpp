@@ -5,7 +5,7 @@
 #include <iostream>
 
 #include "../items/Item.h"
-#include "../items/InventoryList.hpp"
+#include "../items/InventoryList.h"
 
 
 class Entity

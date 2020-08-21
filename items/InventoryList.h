@@ -4,7 +4,7 @@
 #include <iostream>
 
 #include "Item.h"
-#include "../entities/Entity.hpp"
+#include "../entities/Entity.h"
 
 // The inventory class is a linked list that is used for characters to hold items.
 

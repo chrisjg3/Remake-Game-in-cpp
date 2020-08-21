@@ -1,4 +1,4 @@
-#include "InventoryList.hpp"
+#include "InventoryList.h"
 
 // Adding something to inventory
 void InventoryList::addItem(Item& item, Entity& player)

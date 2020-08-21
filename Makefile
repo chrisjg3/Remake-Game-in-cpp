@@ -1,25 +1,31 @@
+FOLDER=items
+SECONDFOLDER=entities
+THIRDFOLDER=derivedItems
 
-# # Makes game executable file
-# game: Item.o InventoryList.o Entity.o Healing.o basefile.o
-# 		g++ -std=c++11 -o game basefile.cpp Item.cpp InventoryList.cpp Entity.cpp Healing.cpp
+build: game
 
+game: Entity.o Item.o InventoryList.o Healing.o basefile.o
+	g++ -o game basefile.o Item.o Entity.o InventoryList.o Healing.o
 
-entities/Entity.o: entities/Entity.cpp entities/Entity.hpp Item.cpp Item.h
-	g++ -std=c++11 -o $@ -c $<
+basefile.o: basefile.cpp $(FOLDER)/Item.cpp $(SECONDFOLDER)/Entity.cpp $(FOLDER)/InventoryList.cpp $(FOLDER)/$(derivedItems)/Healing.cpp
+	g++ -c $(FOLDER)/Item.cpp $(SECONDFOLDER)/Entity.cpp $(FOLDER)/InventoryList.cpp $(FOLDER)/$(derivedItems)/Healing.cpp -o basefile.o Item.o Entity.o InventoryList.o Healing.o
 
-items/Item.o: items/Item.cpp items/Item.h
-	g++ -std=c++11 -o $@ -c $<
-
-items/derivedItems/Healing.o: items/derivedItems/Healing.cpp items/derivedItems/Healing.h
-	g++ -std=c++11 -o $@ -c $<
-
-basefile.o: basefile.cpp basefile.hpp
-	g++ -std=c++11 -o $@ -c $<
-
-game: entities/Entity.o items/Item.o items/derivedItems/Healing.o basefile.o
-	g++ -std=c++11 -o $@ $^
+Entity.o: $(SECONDFOLDER)/Entity.cpp $(FOLDER)/Item.cpp $(FOLDER)/InventoryList.cpp
+	g++ -c $(SECONDFOLDER)/Entity.cpp $(FOLDER)/Item.cpp $(FOLDER)/InventoryList.cpp -o Entity.o Item.o InventoryList.o
 
 
-# This removes the object codes if need they are no longer up-to-date
-# clean: Item.o InventoryList.o Entity.o Healing.o basefile.o
-# 		rm Item.o InventoryList.o Entity.o Healing.o basefile.o
+Item.o: $(FOLDER)/Item.cpp $(SECONDFOLDER)/Entity.cpp
+	g++ -c $(FOLDER)/Item.cpp $(SECONDFOLDER)/Entity.cpp -o Item.o Entity.o
+
+InventoryList.o: $(SECONDFOLDER)/Entity.cpp $(FOLDER)/Item.cpp $(FOLDER)/InventoryList.cpp
+	g++ -c $(SECONDFOLDER)/Entity.cpp $(FOLDER)/Item.cpp $(FOLDER)/InventoryList.cpp -o Entity.o Item.o InventoryList.o
+
+
+Healing.o: $(FOLDER)/$(THIRDFOLDER)/Healing.cpp $(FOLDER)/Item.cpp
+	g++ -c $(FOLDER)/$(THIRDFOLDER)/Healing.cpp $(FOLDER)/Item.cpp -o Item.o Healing.o
+
+
+# So write now, it can't find .o files from entity, and if I
+# delete them it says can't use -c w/ -o with multiple files.
+# So I am thinking I need to change the commands to handle multiple files
+# in a different way?

@@ -1,7 +1,7 @@
 
 // Adventure/Surivival Game.  
 
-#include "basefile.hpp"
+#include "basefile.h"
 
 void gameSetUp();
 

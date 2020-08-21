@@ -3,7 +3,7 @@
 
 #include <iostream>
 
-#include "../entities/Entity.hpp"
+#include "../entities/Entity.h"
 
 class Item
 {
