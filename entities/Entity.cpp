@@ -1,12 +1,13 @@
 
 #include "Entity.h"
-
+#include "../items/InventoryList.h" // Have to include this to get the new Invenotry line to work
 Entity::Entity(unsigned short health, unsigned short healthMax, bool isPlayer)
 {
     // debating overriding [] operator to have ["health"] or something similar, but I can't decide
     this->gameStats[0] = health;
     this->gameStats[1] = 0;
     this->gameStats[2] = healthMax;
+    this->inventory = new InventoryList;
 
     if(isPlayer)
     {
@@ -19,7 +20,6 @@ Entity::Entity(unsigned short health, unsigned short healthMax, bool isPlayer)
         skills[3] = 6; // Animal-Handling
     }
 }
-
 
 // // Inventory related methods:
 // void Entity::pickUpItem(Item& item)

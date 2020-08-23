@@ -32,7 +32,7 @@ Entity(unsigned short health, unsigned short healthMax, bool isPlayer);
 
 
 // Leaving invetory as public for now, not sure if I want to change this
-InventoryList *inventory;
+InventoryList* inventory;
 
 // Three GameStats are: Health, Damage Resitance (effected by armor/items), max health (keeps track of upper bound)
 unsigned short gameStats[3]; 

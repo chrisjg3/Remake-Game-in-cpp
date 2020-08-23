@@ -21,7 +21,7 @@ class InventoryList
     unsigned short getSize() { return size; }
 
     // Default (And only) Constructor
-    InventoryList() { this->head = nullptr; size = 0; }
+    InventoryList() { this->head = nullptr; this->size = 0; std::cout<<"\nSize it "<<size;}
 
     // Destructor
     ~InventoryList(); // NEED TO DEALLOCATE MEMORY !!!!!!!!!!!!!!!!!!!!!!!
