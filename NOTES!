@@ -12,3 +12,7 @@ Things to remember:
 Things to do:
 1. Do we need to pass player to inventory add? Is there a way to make this easier? (Inventory will be object inside of player so maybe not)
 2. Change all .hpp to .h since they are classes
+
+3. Ideas for Base game strucutre, 3 while-loops of three 'Acts/Levels' that you can travel around but then move on, and not go back.  
+We can add a save point possibly, by having a part of basefile.cpp read from a file that is saved.  Then have it skip to a certain while loop.
+Could even display saves.

@@ -4,7 +4,7 @@
 #include <iostream>
 
 #include "Item.h"
-class Item;
+
 class Entity; // Included to avoid cirrcular dependency
 
 // The inventory class is a linked list that is used for characters to hold items.
