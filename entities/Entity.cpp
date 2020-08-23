@@ -1,5 +1,5 @@
 
-#include "Entity.hpp"
+#include "Entity.h"
 
 Entity::Entity(unsigned short health, unsigned short healthMax, bool isPlayer)
 {

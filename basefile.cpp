@@ -27,10 +27,9 @@ int main()
 
     Healing item = Healing("Apple", true, 15);
     std::cout<<"\nYou collected an item";
-    player1.inventory.addItem(item, player1);
+    player1.inventory->addItem(item, player1);
     std::cout<<"\n Item added succesfully!";
     
-    std::string trash;
     std::cout<<"Continue? \n";
     getline(std::cin, trash);
 

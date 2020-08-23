@@ -4,6 +4,7 @@
 #include <iostream>
 
 #include "../entities/Entity.h"
+class Entity;
 
 class Item
 {

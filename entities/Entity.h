@@ -1,12 +1,15 @@
-#ifndef GAMEENTITY_HPP
-#define GAMEENTITY_HPP
+#ifndef ENTITY_H
+#define ENTITY_H
 
 #include <vector>
 #include <iostream>
 
-#include "../items/Item.h"
-#include "../items/InventoryList.h"
+// Included to avoid circulary dependency:
+// #include "../items/InventoryList.h"
 
+// Used to prevent circular dependence
+class Item;
+class InventoryList;
 
 class Entity
 {
@@ -29,7 +32,7 @@ Entity(unsigned short health, unsigned short healthMax, bool isPlayer);
 
 
 // Leaving invetory as public for now, not sure if I want to change this
-InventoryList inventory;
+InventoryList *inventory;
 
 // Three GameStats are: Health, Damage Resitance (effected by armor/items), max health (keeps track of upper bound)
 unsigned short gameStats[3]; 

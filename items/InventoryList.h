@@ -4,14 +4,16 @@
 #include <iostream>
 
 #include "Item.h"
-#include "../entities/Entity.h"
+class Item;
+class Entity; // Included to avoid cirrcular dependency
 
 // The inventory class is a linked list that is used for characters to hold items.
+
 
 class InventoryList
 {
     private:
-    Item* head;
+    Item *head;
     unsigned short size;
 
     public:
@@ -19,7 +21,7 @@ class InventoryList
     unsigned short getSize() { return size; }
 
     // Default (And only) Constructor
-    InventoryList() { head = nullptr; size = 0; }
+    InventoryList() { this->head = nullptr; size = 0; }
 
     // Destructor
     ~InventoryList(); // NEED TO DEALLOCATE MEMORY !!!!!!!!!!!!!!!!!!!!!!!
