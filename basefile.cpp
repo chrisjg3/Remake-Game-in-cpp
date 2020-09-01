@@ -64,7 +64,7 @@ void gameSetUp()
     std::cout<<"\n-------------------------------------"<<std::endl;
 
 
-    std::cout<<"\n\n\n"<<endl;
+    std::cout<<"\n\n\n"<<std::endl;
 
     // Saves/Load Game - NOT IMPLEMENTED - Could have show saves here and lskip rest of code if load save (maybe have func return number or bool to show what was picked)
     
@@ -72,7 +72,8 @@ void gameSetUp()
 
 
     // Set up of Player begins here
-
+    std::cout<<"\n~~PlaceHolder Text~~ Will eventually implement intro here \n";
+    std::cout<<"Lets create your player";
 
 
 
