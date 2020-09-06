@@ -13,11 +13,14 @@ int main()
 
 
     // ----------- Building here a basic envirnment, where the game can be simulated
-    bool levelOne = true; // Could add in save where it reads a file ro pinpoint place but that is that
+
+    bool levelOne = true; // building a primitive save/load feature using bools
     gameSetUp();
-    while(!levelOne)
+    while(levelOne)
     {
-        
+        std::this_thread::sleep_for(std::chrono::seconds(1));
+        std::cout<<"\nYou are in level 1!"<<std::endl;
+        break;
     }
 
 
@@ -52,31 +55,3 @@ int main()
 }
 
 
-void gameSetUp()
-{
-    // Title here - included some endl to flush the buffer
-    std::system("clear"); // Clears screen
-    std::cout<<"\n\n\n-------------------------------------";
-    std::cout<<"\n|                                   |";
-    std::cout<<"\n|          Untitiled Game           |";
-    std::cout<<"\n|   Revenge of the Working Title    |"<<std::endl;
-    std::cout<<"|                                   |";
-    std::cout<<"\n-------------------------------------"<<std::endl;
-
-
-    std::cout<<"\n\n\n"<<std::endl;
-
-    // Saves/Load Game - NOT IMPLEMENTED - Could have show saves here and lskip rest of code if load save (maybe have func return number or bool to show what was picked)
-    
-
-
-
-    // Set up of Player begins here
-    std::cout<<"\n~~PlaceHolder Text~~ Will eventually implement intro here \n";
-    std::cout<<"Lets create your player";
-
-
-
-
-    // NOT IMPLMENTED - Could have some settings here.
-}
