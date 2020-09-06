@@ -14,7 +14,7 @@ class GameData
 
     public:
     // Asks for loading game, if so returns bools to load game, if not starts intro
-    void gameSetUp();
+    void gameSetUp(bool, bool, bool);
 
     void showSavedGames();
 

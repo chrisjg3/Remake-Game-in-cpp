@@ -7,20 +7,27 @@ void gameSetUp();
 
 int main()
 {
+    // These two objects handle the game data and game levels.
+    GameData gmdata; // game data - saving and loading games
+    LevelStruct gmlevels; // game levels - each level is a method called in this class
 
-    // Maybe build three main while loops for game, this way at a popint of no return, all other variables go out of scope and free some memory
-    // Just a good idea for good practice
+
 
 
     // ----------- Building here a basic envirnment, where the game can be simulated
 
-    bool levelOne = true; // building a primitive save/load feature using bools
-    gameSetUp();
+    // These bools will be used as save points and passed into gameData to be changed to where savepoint is
+    bool levelOne = true; 
+    bool levelTwo = false;
+    bool levelThree = false;
+    // bool gameActive = true;  // Not sure if gonna use this
+
+    gmdata.gameSetUp(levelOne, levelTwo, levelThree);
+
+
     while(levelOne)
     {
-        std::this_thread::sleep_for(std::chrono::seconds(1));
-        std::cout<<"\nYou are in level 1!"<<std::endl;
-        break;
+        gmlevels.runLevelOne(levelOne);
     }
 
 

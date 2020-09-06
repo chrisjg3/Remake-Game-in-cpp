@@ -1,9 +1,8 @@
-#include <GameData.h>
+#include "GameData.h"
 
 
 
-
-void gameSetUp()
+void GameData::gameSetUp(bool level1, bool level2, bool level3)
 {
     // Title here - included some endl to flush the buffer
     std::system("clear"); // Clears screen
@@ -14,12 +13,13 @@ void gameSetUp()
     std::cout<<"|                                   |";
     std::cout<<"\n-------------------------------------"<<std::endl;
 
+    std::this_thread::sleep_for(std::chrono::seconds(2));
 
     std::cout<<"\n\n\n"<<std::endl;
 
     // Saves/Load Game - NOT IMPLEMENTED - Could have show saves here and lskip rest of code if load save (maybe have func return number or bool to show what was picked)
     
-
+    std::this_thread::sleep_for(std::chrono::seconds(3));
 
 
     // Set up of Player begins here
