@@ -1,4 +1,4 @@
-use std::io;
+// use std::io;
 mod gamestruct;
 
 fn main() {
@@ -6,9 +6,9 @@ fn main() {
 
     loop 
     {
-        let (_direct, _times_move) = gamestruct::GameStr::read_player();
-        gamestruct::GameStr::check_events();
-        gamestruct::GameStr::update_map();
+        let (direct, times_move) = gamestruct::GameStr::read_player();
+        gamestruct::GameStr::check_events(direct, times_move);
+        gamestruct::GameStr::update_interface();
     }
     
 }
