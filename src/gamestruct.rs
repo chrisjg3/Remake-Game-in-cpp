@@ -12,7 +12,9 @@ impl GameStr
 
 	pub fn read_player() -> (char, u8)
 	{
+		println!("_________________________________________________________\nPlayer Input: "); // Just for appeal of interface
 		let mut command = String::new(); // Player input var
+		command.clear();
 
 		io::stdin().read_line(&mut command).expect("Not a valid option"); // Read in player input
 
@@ -20,19 +22,20 @@ impl GameStr
 
 		let mut direct: char = 'a';
 		let mut num: u8 = 0;
+		
 
-		for c in command.chars()
+		for(i, c) in command.chars().enumerate()
 		{
-			direct = c; // Probably need to change as it is reassigned each loop, but okay for now
+			if i == 0  { direct = c; } 
 			num += 1;
 		}
-
+		if num != 0 { num -= 1; } // Counts the enter, so this subtracts that enter
 		println!("In test: char is {} and num is {}", direct, num);
 		(direct, num)
 	}
 
 
-	pub fn check_events()
+	pub fn check_events(_direct: char, _times_move: u8)
 	{
 		// Doesn't do anything yet 000---------------
 		println!("Checked Events!");
@@ -42,7 +45,7 @@ impl GameStr
 	}
 
 
-	pub fn update_map()
+	pub fn update_interface()
 	{
 		// Doesn't do anything yet 000---------------
 		println!("Updated the Map!");
