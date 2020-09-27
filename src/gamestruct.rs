@@ -1,4 +1,5 @@
 // Game struct
+use std::io;
 
 pub struct GameStr
 {
@@ -9,11 +10,25 @@ pub struct GameStr
 impl GameStr
 {
 
-
-	pub fn read_player()
+	pub fn read_player() -> (char, u8)
 	{
-		// Doesn't do anything yet ------------------
-		println!("Read Player Input");
+		let mut command = String::new(); // Player input var
+
+		io::stdin().read_line(&mut command).expect("Not a valid option"); // Read in player input
+
+		println!("Read Player Input"); // DEBUG
+
+		let mut direct: char = 'a';
+		let mut num: u8 = 0;
+
+		for c in command.chars()
+		{
+			direct = c; // Probably need to change as it is reassigned each loop, but okay for now
+			num += 1;
+		}
+
+		println!("In test: char is {} and num is {}", direct, num);
+		(direct, num)
 	}
 
 
