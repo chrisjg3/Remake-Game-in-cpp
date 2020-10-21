@@ -1,7 +1,7 @@
 // Game struct
 use std::io;
 
-
+mod map_interface;
 
 pub struct GameStr
 	{
