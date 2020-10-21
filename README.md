@@ -36,7 +36,8 @@ All objects will fall under one of the above processes.s
 
 ## Upcoming Plans:
 
-
+- Next Branch will be working on the map and map interface, I think to do test-driven development, thats going to be the most important thing to implement
+    (since this allows me to run the game and actually do stuff, even before characters or items are made)
 
 
 
