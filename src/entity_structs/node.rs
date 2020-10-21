@@ -1,5 +1,5 @@
 // again for simplicty sake I made a struct stub to make life easy
-struct item
+struct Item
 {
 
 }
