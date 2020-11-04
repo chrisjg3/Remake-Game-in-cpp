@@ -1,6 +1,6 @@
 *.o
 .vscode
-*.pyc
+*.DS_Store
 
 
 #Added by cargo
