@@ -1,8 +1,7 @@
 // Game struct
 use std::io;
 use std::fs::File;
-
-
+// mod map_backend;
 
 pub struct GameStr
 	{  }
@@ -77,6 +76,8 @@ pub struct GameStr
 		{
 			// Doesn't do anything yet 000---------------
 			println!("Updated the Map!");
+
+
 		}
 
 

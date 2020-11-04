@@ -19,7 +19,14 @@ fn main() {
 	// load game
 	let save = gamestruct::GameStr::load_game();
 
+	// Loads First Map
+	gamestruct::GameStr::update_interface();
 
+	let map = game_system::mapstruct::Map::new();
+
+	println!("{}", map.layout);
+
+	// actual game loop
     loop
     {
         let (direct, times_move) = gamestruct::GameStr::read_player();

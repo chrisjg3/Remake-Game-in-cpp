@@ -2,6 +2,7 @@ mod entity;
 mod items;
 mod temp_inventory;
 mod resultsstruct;
+pub mod mapstruct;
 
 struct GameEngine
 {
