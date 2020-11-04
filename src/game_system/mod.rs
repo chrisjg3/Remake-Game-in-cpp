@@ -1,6 +1,7 @@
 mod entity;
 mod items;
-mod inventory;
+mod temp_inventory;
+mod resultsstruct;
 
 struct GameEngine
 {

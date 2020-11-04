@@ -1,16 +1,42 @@
 // Game struct
 use std::io;
+use std::fs::File;
 
 
 
 pub struct GameStr
-	{
-		// Save: (some sort of file type, later features)
-	}
+	{  }
 
 
 	impl GameStr
 	{
+
+		pub fn load_game() -> File
+		{
+			println!("Loading Game.....\n");
+
+			let save = File::open("save.txt");
+
+			let save = match save 
+			{
+				Ok(file) => file,
+				Err(error) => match error.kind()
+				{
+					NotFound => match File::create("save.txt")
+					{
+						Ok(file) => file,
+						Err(error) => panic!("Error when creating file when no save found!"),
+					}
+					other_error => panic!("Save file found, but didn't open!"),
+				},
+			};
+
+			save
+		}
+
+
+
+
 
 		pub fn read_player() -> (char, u8)
 		{

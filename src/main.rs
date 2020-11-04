@@ -15,6 +15,11 @@ Might be cool
 
 fn main() {
 
+
+	// load game
+	let save = gamestruct::GameStr::load_game();
+
+
     loop
     {
         let (direct, times_move) = gamestruct::GameStr::read_player();
