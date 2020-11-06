@@ -43,7 +43,7 @@ pub struct GameStr
 			let mut command = String::new(); // Player input var
 			command.clear();
 
-			io::stdin().read_line(&mut command).expect("Not a valid option"); // Read in player input
+			io::stdin().read_line(&mut command).expect("Not a valid option"); // Expect unwraps the error return and calls panic! if dones't work
 
 			println!("Read Player Input"); // DEBUG
 
