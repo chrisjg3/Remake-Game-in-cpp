@@ -21,7 +21,7 @@ impl EventManager
         EventManager
         {
             turn: 0,
-            map: Map::new(),
+            map: Map::new(0),
         }
     }
 

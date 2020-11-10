@@ -48,8 +48,7 @@ impl GameState
 // Idea is a tuple of some sort, maybe with enums maybe just a list of numbers.
 fn user_input() -> (u8, u8)
 {
-    // for now returns tuple that says: ( What you will build, in which area)
-    // Need some sort of rules checker here I guess?
+    // read from file that is created by Javascript front end
     (0,0)
 }
 
