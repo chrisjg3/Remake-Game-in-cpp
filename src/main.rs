@@ -24,7 +24,7 @@ fn main() {
 
 	let map = game_system::mapstruct::Map::new();
 
-	println!("{}", map.layout);
+	// println!("{}", map.layout);
 
 	// actual game loop
     loop
