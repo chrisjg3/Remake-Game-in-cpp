@@ -11,9 +11,10 @@ pub struct EventManager
 impl EventManager
 {
 
-    pub fn events(&self, data: (u8, u8))
+    pub fn events(&self, data: (u8, u8)) -> [u8; 5]
     {
         println!("SUCCESSFULLY PASSED!");
+        [0, 0, 0, 0, 0]
     }
 
     pub fn new() -> EventManager
@@ -25,18 +26,19 @@ impl EventManager
         }
     }
 
-    pub fn start(&mut self)
+    pub fn start(&self) -> [u8; 5] // need more data on intial start
     {
-        // Creates Start Event
+        // returns an array that encodes the actions taken, to be sent to frontend
+
+
+        [0, 0, 0, 0, 0]
     }
 
-    pub fn user_to_map(&mut self) // takes user input or ai input and updates the world
+    pub fn send_to_front(&self, arr: [u8; 5])
     {
+        // Sending to front end is really just sending 3 things: 1 hexes that were updated, 
+        // what they were changed to, and any global player stats that were changed
 
-    }
-
-    pub fn display(&self)
-    {
 
     }
 

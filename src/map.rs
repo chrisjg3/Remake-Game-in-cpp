@@ -37,7 +37,7 @@ pub struct Hex
 
 impl Hex
 {
-    fn new(seed: u8, hex: (i8, i8, i8)) -> Hex
+    fn new(_seed: u8, hex: (i8, i8, i8)) -> Hex
     {
         Hex
         {

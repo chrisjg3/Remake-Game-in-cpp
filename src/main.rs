@@ -29,13 +29,14 @@ impl GameState
     {
         let mut em = GameState::set_up();
 
-        em.start();
+        em.send_to_front(em.start());
 
         loop
         {
             let data = user_input();
-
-            em.events(data);
+            
+            em.send_to_front(em.events(data));
+            em.turn_end();
             break;
         }
 

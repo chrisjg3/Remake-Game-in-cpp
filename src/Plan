@@ -1,0 +1,26 @@
+
+
+
+Plan:
+
+
+
+-- Rust Game --                                                                       -- JavaScript GUI --
+
+em starts game
+(sends map seed, player/ai start decisions)             ->                               Displays regular start map
+
+
+Recieves choices                                         <-                               1st turn player choices
+(formatted as what action 
+they chose and on what hex/ai/whatever)
+
+
+Makes changes and makes ai moves
+(sends only hexes and what changed)                     ->                              Display changes slowly
+
+
+
+                                 <-            REPEAT UNTIL GAME END         ->
+
+
