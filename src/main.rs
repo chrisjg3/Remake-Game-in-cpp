@@ -33,7 +33,7 @@ impl GameState
 
         loop
         {
-            let data = user_input();
+            let data = user_input(); // Recieved from Javascript
             
             em.send_to_front(em.events(data));
             em.turn_end();

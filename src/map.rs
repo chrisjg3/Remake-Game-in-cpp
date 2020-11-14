@@ -30,6 +30,7 @@ pub struct Hex
 {
  hex: (i8, i8, i8),
  land: Land,
+ owner: Nation,
  soldiers: u8,
  city: bool,
  city_level: u8,
@@ -43,6 +44,7 @@ impl Hex
         {
             hex,
             land: Land::Plains,
+            owner: Nation::Unclaimed,
             soldiers: 0,
             city: false,
             city_level: 0,
@@ -56,4 +58,15 @@ enum Land
     Hills,
     Forrest,
     Ocean,
+}
+
+
+enum Nation
+{
+    France,
+    China,
+    Greece,
+    Mali,
+    Aztec,
+    Unclaimed,
 }

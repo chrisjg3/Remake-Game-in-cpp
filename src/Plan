@@ -1,5 +1,98 @@
 
 
+Game Idea and Layout:
+
+Start game where grid is built
+Grid can be numbered 0..18
+
+3 players (player himself plus two ai)
+they spawn on 3, 6, and 17.
+
+Game Pace:
+Game is like Civ, you collect money to build soldiers and make your nation bigger.
+You can win either by fighting both your oppenets and taking all their capital (and owning most of the tiles)
+Or by science by reaching the end of the tech "tree"
+
+Each turn there is a random chance your cities grow (start at level 1 and reach level 5)
+Turn +1 Cash each turn for each level in all cities
+Each turn you get +1 research for each city level
+
+Cash is spent on buying soldiers, building buildings for bonuses, and claiming unclaimed tiles
+
+Research is stockpiled and each time you reach 100, you discover a technology.
+Once all tech is reached in yout tech level, save 200 to move to a new age.  
+
+Ages:
+Bronze - Classical Age - Medival Age - Renaissance Age - Industrial Age - Atomic Age - Information Age - Interstellar Age
+
+You don't know what techs other natins have, but you get a notification each age upgrade. 
+
+Each age gives you a bump in attack stats and a boost in cash and a cool ability
+
+
+
+
+Turn:
+
+
+
+
+Gonna write these down, but gonna pause this until I get a game up and running first
+Expanded Ideas:
+
+        Ages
+        This lists the tech of each and the bonuses you get
+
+        Bronze 
+            - Reached:
+                1. This is the start, so no bonus for reaching this level
+            - Tech:
+                1. Army Class - Allows you to train soliders
+                2. Irrigation System - Earn 1 cash per city level rather than fixed 1 per turn
+
+        Classical Age 
+            - Reached:
+                1. Can now have more than 2 soldiers, (limit now 5)
+                2. Now can claim unclaimed land (as long as own less than 4 tiles)
+            - Tech:
+                1. Seige - Now you can attack tiles of enemy and take them. ( as long as own less than 4 tiles)
+        
+        Medival Age:
+            - Reached:
+                1. Max tiles owned is now 6
+                2. Choice: Can make tile max 8, but would get only 1 science per turn 
+            
+            - Tech:
+                1. City Defense - Cities now defend with more strength
+                2. Feudal Knights - No army limit now
+
+        Renaissance Age:
+            - Reached:
+                1. Max tile limit now 9 (one tile short of win)
+                2. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+-- System Archecture:
 
 Plan:
 
