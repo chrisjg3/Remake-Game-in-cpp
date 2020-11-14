@@ -14,6 +14,14 @@ impl EventManager
     pub fn events(&self, data: (u8, u8)) -> [u8; 5]
     {
         println!("SUCCESSFULLY PASSED!");
+
+        // Data is passed to map, which handles hex changes
+        // and is passed to global, which handles player stat changes
+        // This method can also check valid actions, but I think it is alright for now
+        // Maybe each Map or Global action passed an error upward if it is invalid
+
+
+
         [0, 0, 0, 0, 0]
     }
 
