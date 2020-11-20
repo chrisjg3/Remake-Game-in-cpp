@@ -28,19 +28,16 @@ impl EventManager
             // see building type and contrcut it
             let build_type = data[0];
             let hex_num = data[1];
-            if build_type == 1 
-            {
-                
 
-            }
+            self.Map.grid[hex_num].buildings[build_type - 1] += 1; // -1 since the type is off by one from data
 
             // pay for building 
-
+            self.globe.cash_change(-40);
         }
 
         if data[2] < signal_not_moving
         {
-
+            
             // remember to update hexes_controlled 
         }
 
