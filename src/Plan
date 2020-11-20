@@ -1,5 +1,101 @@
 
 
+-- System Archecture:
+
+Plan:
+
+
+
+-- Rust Game --                                                                       -- JavaScript GUI --
+(1 thread should be fine)                                                               (multithread probably a good idea)
+
+em starts game
+(sends map seed, player/ai start decisions)             ->                               Displays regular start map
+
+
+Recieves choices                                         <-                               1st turn player choices
+(formatted as what action 
+they chose and on what hex/ai/whatever)
+
+
+Makes changes and makes ai moves
+(sends only hexes and what changed)                     ->                              Display changes slowly
+
+
+
+                                 <-            REPEAT UNTIL GAME END         ->
+
+
+
+
+Internals to Rust:
+
+Vector 0f Globals holds player 1 (human) and player 2 (ai) and player 3 (ai)
+    - global is just cash and research amount
+
+
+Map holds board hexes and keeps track of that data
+- if city
+- # soliders
+- terrain
+- etc
+
+
+Actual Game
+    So first world is generated
+    Info sent to frontend
+
+    then loop begins:
+        -player input received
+            event manger makes changes to global and map
+        - then ai runs
+            event manger makes each ai changed
+        - then next turn bonuses added (cash, research, tech level reached)
+        - then info is sent to front end
+
+
+Inside loop:
+    - I say build an update function that takes input and updates globe and map
+    - then have player input passed to that
+    - then build ai deicison function that generates similar input
+    - then for each ai feed the info into the update function
+    - then build a send info function
+
+
+
+Format of info,
+
+Key is what are the actions one can take in a turn?
+- Spend cash on a building (cash building, science building, defense building)
+    (what hex, what building)
+- Move soldiers
+    (from hex, to hex, what number)
+- Tech level up choice (attack mode or continue mode)
+    0 or 1 for choice
+
+Array of 5 digits:
+[
+    0    ->    buying, what building type (0 is not building, 1 is cash, 2 science, 3 defense)  
+    0    ->    hex building on 
+    0    ->    to what hex if attacking, (make 20+ if not attacking I guess? This is first to check if should be doing battle caculation)
+    0    ->    from what hex 
+    0    ->    number of soldiers being moved
+    0    ->    if decision was sent, 0 is continue, 1 is attack, (could easily wrap this inside the others since so much bits not used, but whatever for now)
+]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 Game Idea and Layout:
 
 Start game where grid is built
@@ -71,49 +167,5 @@ Expanded Ideas:
                 1. Max tile limit now 9 (one tile short of win)
                 2. 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
--- System Archecture:
-
-Plan:
-
-
-
--- Rust Game --                                                                       -- JavaScript GUI --
-
-em starts game
-(sends map seed, player/ai start decisions)             ->                               Displays regular start map
-
-
-Recieves choices                                         <-                               1st turn player choices
-(formatted as what action 
-they chose and on what hex/ai/whatever)
-
-
-Makes changes and makes ai moves
-(sends only hexes and what changed)                     ->                              Display changes slowly
-
-
-
-                                 <-            REPEAT UNTIL GAME END         ->
 
 

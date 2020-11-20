@@ -30,10 +30,11 @@ pub struct Hex
 {
  hex: (i8, i8, i8),
  land: Land,
- owner: Nation,
- soldiers: u8,
- city: bool,
- city_level: u8,
+ pub owner: Nation,
+ pub soldiers: u8,
+ pub city: bool,
+ pub city_level: u8,
+ pub buildings: [u8; 3],
 }
 
 impl Hex
@@ -48,6 +49,7 @@ impl Hex
             soldiers: 0,
             city: false,
             city_level: 0,
+            buildings: [0, 0, 0]
         }
     }
 }

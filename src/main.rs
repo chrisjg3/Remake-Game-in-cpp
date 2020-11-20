@@ -1,5 +1,6 @@
 mod event_manager;
 mod map;
+mod global;
 
 
 fn main() {
@@ -21,7 +22,6 @@ impl GameState
     fn set_up() -> event_manager::EventManager
     {
         event_manager::EventManager::new()
-
     }
 
 
@@ -29,15 +29,23 @@ impl GameState
     {
         let mut em = GameState::set_up();
 
-        em.send_to_front(em.start());
+        let mut done = false;
 
-        loop
+        while !done
         {
             let data = user_input(); // Recieved from Javascript
             
-            em.send_to_front(em.events(data));
-            em.turn_end();
-            break;
+            em.update(0, data);
+
+            let ai_data = em.calc_ai(1);
+
+            em.update(1, ai_data);
+
+            let ai_data = em.calc_ai(2);
+
+            em.update(2, ai_data);
+
+            done = em.turn_end();
         }
 
     }
@@ -47,10 +55,10 @@ impl GameState
 
 // Something for coding user input into different actions
 // Idea is a tuple of some sort, maybe with enums maybe just a list of numbers.
-fn user_input() -> (u8, u8)
+fn user_input() -> [u8; 5]
 {
     // read from file that is created by Javascript front end
-    (0,0)
+    [0, 0, 0, 0, 0]
 }
 
 

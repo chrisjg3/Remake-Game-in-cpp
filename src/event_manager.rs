@@ -1,27 +1,61 @@
 // mod super::map;
-
 use super::map::Map;
+use super::global::Global;
+
+
+// NOTES FOR ITNERNALS
+// Building price set at 40 right now
+
 
 pub struct EventManager
 {
     turn: u32,
     map: Map,
+    globe: [Global; 3]
 }
 
 impl EventManager
 {
 
-    pub fn events(&self, data: (u8, u8)) -> [u8; 5]
+    pub fn update(&mut self, player: usize, data: [u8; 5]) 
     {
-        println!("SUCCESSFULLY PASSED!");
+        let building_price = 40;
+        let signal_not_moving = 20;
 
-        // Data is passed to map, which handles hex changes
-        // and is passed to global, which handles player stat changes
-        // This method can also check valid actions, but I think it is alright for now
-        // Maybe each Map or Global action passed an error upward if it is invalid
+        // for buying first
+        if data[0] != 0 && self.globe[player].enough_to_buy(building_price)
+        {
+            // see building type and contrcut it
+            let build_type = data[0];
+            let hex_num = data[1];
+            if build_type == 1 
+            {
+                
+
+            }
+
+            // pay for building 
+
+        }
+
+        if data[2] < signal_not_moving
+        {
+
+            // remember to update hexes_controlled 
+        }
+
+        if data[4] == 1 && self.globe[player].upgradeReached
+        {
 
 
+            self.globe[player].upgradeReached = false;
+        }
+        
+    }
 
+    pub fn calc_ai(&self, player: u8) -> [u8; 5]
+    {
+        // returns array for ai moves to be passed to update
         [0, 0, 0, 0, 0]
     }
 
@@ -31,28 +65,20 @@ impl EventManager
         {
             turn: 0,
             map: Map::new(0),
+            globe: [Global::new(), Global::new(), Global::new()],
         }
-    }
-
-    pub fn start(&self) -> [u8; 5] // need more data on intial start
-    {
-        // returns an array that encodes the actions taken, to be sent to frontend
-
-
-        [0, 0, 0, 0, 0]
-    }
-
-    pub fn send_to_front(&self, arr: [u8; 5])
-    {
-        // Sending to front end is really just sending 3 things: 1 hexes that were updated, 
-        // what they were changed to, and any global player stats that were changed
-
 
     }
 
-    pub fn turn_end(&mut self)
+
+    pub fn turn_end(&mut self) -> bool
     {
+        // for all three players, calculate cash and science and change level up if reached
+
+        // checks win condtions
+
         self.turn += 1;
+        true
     }
 
 
