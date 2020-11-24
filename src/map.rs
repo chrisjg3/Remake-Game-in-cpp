@@ -67,10 +67,10 @@ enum Land
 
 enum Nation
 {
-    France,
+    Aztec,
     China,
+    France,
     Greece,
     Mali,
-    Aztec,
     Unclaimed,
 }

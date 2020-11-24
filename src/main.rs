@@ -21,7 +21,13 @@ impl GameState
 {
     fn set_up() -> event_manager::EventManager
     {
-        event_manager::EventManager::new()
+        // front end sends player nation choice
+        // also sends seed
+        let chosen_seed: u8 = 0;
+        let player_nation: u8 = 0;
+        //
+
+        event_manager::EventManager::new(chosen_seed, player_nation)
     }
 
 

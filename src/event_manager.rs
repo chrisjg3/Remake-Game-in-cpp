@@ -1,6 +1,7 @@
 // mod super::map;
 use super::map::Map;
 use super::global::Global;
+use rand::Rng;
 
 
 // NOTES FOR ITNERNALS
@@ -98,13 +99,24 @@ impl EventManager
         [0, 0, 0, 0, 0]
     }
 
-    pub fn new() -> EventManager
+    pub fn new(seed: u8, player_nation: u8) -> EventManager
     {
+        let mut num1 = rand::thread_rng().gen_range(0, 4);
+        while num1 == player_nation
+        {
+            num1 = rand::thread_rng().gen_range(0, 4);
+        }
+        let mut num2 =  rand::thread_rng().gen_range(0, 4);
+        while num2 == num1 || num2 == player_nation
+        {
+            num2 =  rand::thread_rng().gen_range(0, 4);
+        }
+
         EventManager
         {
             turn: 0,
-            map: Map::new(0),
-            globe: [Global::new(), Global::new(), Global::new()],
+            map: Map::new(seed),
+            globe: [Global::new(player_nation), Global::new(num1), Global::new(num2)],
         }
 
     }
