@@ -1,6 +1,6 @@
 pub struct Map
 {
- grid: [ Hex; 19 ],
+    pub grid: [ Hex; 19 ],
 }
 
 impl Map
@@ -28,13 +28,14 @@ impl Map
 
 pub struct Hex
 {
- hex: (i8, i8, i8),
- land: Land,
- pub owner: Nation,
- pub soldiers: u8,
- pub city: bool,
- pub city_level: u8,
- pub buildings: [u8; 3],
+     hex: (i8, i8, i8),
+     land: Land,
+     pub owner: Nation,
+     pub soldiers: u8,
+     pub city: bool,
+     pub city_level: u8,
+     pub buildings: [u8; 3],
+     pub soldier_owner: u8, // 0,1,2 like global; 3 is a reset value
 }
 
 impl Hex
@@ -49,7 +50,8 @@ impl Hex
             soldiers: 0,
             city: false,
             city_level: 0,
-            buildings: [0, 0, 0]
+            buildings: [0, 0, 0],
+            soldier_owner: 3,
         }
     }
 }

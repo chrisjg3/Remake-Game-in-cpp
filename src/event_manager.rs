@@ -21,6 +21,7 @@ impl EventManager
     {
         let building_price = 40;
         let signal_not_moving = 20;
+        let no_one_num = 3;
 
         // for buying first
         if data[0] != 0 && self.globe[player].enough_to_buy(building_price)
@@ -35,16 +36,57 @@ impl EventManager
             self.globe.cash_change(-40);
         }
 
-        if data[2] < signal_not_moving
+        if data[2] < signal_not_moving && map.grid[data[3]].soldiers >= data[4] // player chose move and has enough soldiers
         {
-            
-            // remember to update hexes_controlled 
+            // data[2] where going
+            // data[3] from where
+            // data[4] how many
+
+            // then check if going is attack or not
+            // run attack or don't, then update hex numbers,
+            let &mut origin = &mut map.grid[data[3]];
+            let &mut moving_to = &mut map.grid[data[2]];
+            let mut num = data[4];
+            if origin.soldier_owner == player
+            {
+                origin.soldiers = origin.soldiers - num;
+                if origin.soldiers == 0
+                {
+                    origin.soldier_owner = no_one_num;
+                }
+                // if attacking
+                if moving_to.soldier_owner != player && moving_to.soldier_owner != no_one_num
+                {
+                    // how attacking works here --------------------------------------------------------------------------------
+                    // make sure to update num and moving_to hex soldier number ------------------------------------------------
+                    let mut attack_success = true;
+                    // add if hex or city is captured here! -----------------------------------------------------------------
+                    if(attack_success == true)
+                    {
+                        moving_to.soldiers = num;
+                        moving_to.soldier_owner = player;
+                    }
+                    else
+                    {
+                        origin.soldiers += num;
+                        origin.soldier_owner = player;
+                    }
+                }
+                // just moving to own soldiers or empty hex
+                else
+                {
+                    moving_to.soldier_owner = player;
+                    moving_to.soldiers += num;
+                }
+            }
+
+            // remember to update hexes_controlled ---------------------------------------------------------
+            // maybe have capture hex or claim hex be a seperate move and that ++ ----------------------------
         }
 
         if data[4] == 1 && self.globe[player].upgradeReached
         {
-
-
+            // implement this wayyyy later -------------------------------------------------------
             self.globe[player].upgradeReached = false;
         }
         
