@@ -2,5 +2,5 @@
 
 ## NOTICE:
 
-I have decided to scrap everything.  I want to build a project alongside reading the rust book.  It will be easier to start over with simple concepts and add features as I past chapters.
-
+Current textfile inside of project specifies more on project.  I will a more formalized version here at some point.  No
+rush as this is a solo project.

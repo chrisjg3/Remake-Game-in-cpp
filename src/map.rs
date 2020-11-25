@@ -65,7 +65,7 @@ enum Land
 }
 
 
-enum Nation
+pub enum Nation
 {
     Aztec,
     China,

@@ -1,5 +1,6 @@
 // For gloabl player stats
 
+use super::map;
 
 pub struct Global
 {
@@ -7,7 +8,7 @@ pub struct Global
     research: u32,
     pub upgradeReached: bool,
     pub hexes_controlled: u8, // for winning conditions
-    pub nat: Nation,
+    pub nat: super::map::Nation,
 }
 
 impl Global
@@ -22,11 +23,11 @@ impl Global
             hexes_controlled: 1,
             nat: match nation
             {
-                0 => Aztec,
-                1 => China,
-                2 => France,
-                3 => Greece,
-                4 => Mali,
+                0 => map::Nation::Aztec,
+                1 => map::Nation::China,
+                2 => map::Nation::France,
+                3 => map::Nation::Greece,
+                4 => map::Nation::Mali,
                 _ => panic!("Invalid Nation Given to Global!"),
             }
         }
@@ -55,13 +56,13 @@ impl Global
     // fn for turn ending causing each nation to get cash and research
 }
 
-
-enum Nation
-{
-    Aztec,
-    China,
-    France,
-    Greece,
-    Mali,
-    Unclaimed,
-}
+//
+// enum Nation
+// {
+//     Aztec,
+//     China,
+//     France,
+//     Greece,
+//     Mali,
+//     Unclaimed,
+// }

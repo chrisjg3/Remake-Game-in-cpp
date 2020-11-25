@@ -27,9 +27,28 @@
   <component name="ChangeListManager">
     <list default="true" id="e7f519b6-3907-422f-98c1-1133632c922d" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cargo.lock" beforeDir="false" afterPath="$PROJECT_DIR$/Cargo.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cargo.toml" beforeDir="false" afterPath="$PROJECT_DIR$/Cargo.toml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cpp_old_backend/GameData.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cpp_old_backend/GameData.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cpp_old_backend/LevelStruct.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cpp_old_backend/LevelStruct.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cpp_old_backend/Makefile" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cpp_old_backend/basefile.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cpp_old_backend/basefile.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cpp_old_backend/entities/Entity.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cpp_old_backend/entities/Entity.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cpp_old_backend/items/InventoryList.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cpp_old_backend/items/InventoryList.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cpp_old_backend/items/Item.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cpp_old_backend/items/Item.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cpp_old_backend/items/derivedItems/Healing.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cpp_old_backend/items/derivedItems/Healing.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cpp_old_backend/notes" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cpp_old_backend/old_README.md" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/event_manager.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/event_manager.rs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/global.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/global.rs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/left-off" beforeDir="false" afterPath="$PROJECT_DIR$/src/left-off" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.rs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/map.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/map.rs" afterDir="false" />
     </list>
@@ -56,6 +75,7 @@
   </component>
   <component name="RustProjectSettings">
     <option name="toolchainHomeDirectory" value="$USER_HOME$/.cargo/bin" />
+    <option name="version" value="2" />
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -78,6 +98,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
     <state x="352" y="168" width="1239" height="820" key="#Plugins" timestamp="1606190468906">

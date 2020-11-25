@@ -34,6 +34,7 @@ impl GameState
     fn begin()
     {
         let mut em = GameState::set_up();
+        em.start();
 
         let mut done = false;
 
