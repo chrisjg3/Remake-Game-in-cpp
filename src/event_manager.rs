@@ -18,7 +18,7 @@ pub struct EventManager
 impl EventManager
 {
 
-    pub fn update(&mut self, player: usize, data: [u8; 5]) 
+    pub fn update(&mut self, player: usize, data: [u8; 6])
     {
         let building_price = 40;
         let signal_not_moving = 20;
@@ -34,7 +34,7 @@ impl EventManager
             self.map.grid[hex_num].buildings[build_type - 1] += 1; // -1 since the type is off by one from data
 
             // pay for building 
-            self.globe.cash_change(-40);
+            self.globe[player].cash_change(-40);
         }
 
         if data[2] < signal_not_moving && self.map.grid[ usize::from(data[3]) ].soldiers >= data[4] // player chose move and has enough soldiers
@@ -45,39 +45,38 @@ impl EventManager
 
             // then check if going is attack or not
             // run attack or don't, then update hex numbers,
-            let &mut origin = &mut self.map.grid[ usize::from( data[3] ) ];
-            let &mut moving_to = &mut self.map.grid[ usize::from( data[2] ) ];
-            let mut num = data[4];
-            if origin.soldier_owner == u8::from(player)
+
+            let num = data[4];
+            if self.map.grid[ usize::from( data[3] ) ].soldier_owner == player as u8
             {
-                origin.soldiers = origin.soldiers - num;
-                if origin.soldiers == 0
+                self.map.grid[ usize::from( data[3] ) ].soldiers = self.map.grid[ usize::from( data[3] ) ].soldiers - num;
+                if self.map.grid[ usize::from( data[3] ) ].soldiers == 0
                 {
-                    origin.soldier_owner = no_one_num;
+                    self.map.grid[ usize::from( data[3] ) ].soldier_owner = no_one_num;
                 }
                 // if attacking
-                if moving_to.soldier_owner != u8::from(player) && moving_to.soldier_owner != no_one_num
+                if self.map.grid[ usize::from( data[2] ) ].soldier_owner != player as u8 && self.map.grid[ usize::from( data[2] ) ].soldier_owner != no_one_num
                 {
                     // how attacking works here --------------------------------------------------------------------------------
-                    // make sure to update num and moving_to hex soldier number ------------------------------------------------
+                    // make sure to update num and self.map.grid[ usize::from( data[2] ) ] hex soldier number ------------------------------------------------
                     let mut attack_success = true;
                     // add if hex or city is captured here! -----------------------------------------------------------------
                     if attack_success
                     {
-                        moving_to.soldiers = num;
-                        moving_to.soldier_owner = u8::from(player);
+                        self.map.grid[ usize::from( data[2] ) ].soldiers = num;
+                        self.map.grid[ usize::from( data[2] ) ].soldier_owner = player as u8;
                     }
                     else
                     {
-                        origin.soldiers += num;
-                        origin.soldier_owner = u8::from(player);
+                        self.map.grid[ usize::from( data[3] ) ].soldiers += num;
+                        self.map.grid[ usize::from( data[3] ) ].soldier_owner = player as u8;
                     }
                 }
                 // just moving to own soldiers or empty hex
                 else
                 {
-                    moving_to.soldier_owner = u8::from(player);
-                    moving_to.soldiers += num;
+                    self.map.grid[ usize::from( data[2] ) ].soldier_owner = player as u8;
+                    self.map.grid[ usize::from( data[2] ) ].soldiers += num;
                 }
             }
 
@@ -85,7 +84,7 @@ impl EventManager
             // maybe have capture hex or claim hex be a seperate move and that ++ ----------------------------
         }
 
-        if data[4] == 1 && self.globe[player].upgradeReached
+        if data[5] == 1 && self.globe[player].upgradeReached
         {
             // implement this wayyyy later -------------------------------------------------------
             self.globe[player].upgradeReached = false;
@@ -127,15 +126,7 @@ impl EventManager
     pub fn start(&mut self)
     {
         self.map.grid[3].city = true;
-        self.map.grid[3].owner = match self.globe[0].nat
-        {
-            Aztec => Aztec,
-            China => China,
-            France => France,
-            Greece => Greece,
-            Mali => Mali,
-            Unclaimed => panic!("Invalid Nation in PLayer 1 Start!"),
-        }
+        self.map.grid[3].owner = self.globe[0].nat;
     }
 
 

@@ -73,7 +73,7 @@ Key is what are the actions one can take in a turn?
 - Tech level up choice (attack mode or continue mode)
     0 or 1 for choice
 
-Array of 5 digits:
+Array of 6 digits:
 [
     0    ->    buying, what building type (0 is not building, 1 is cash, 2 science, 3 defense)  
     0    ->    hex building on 

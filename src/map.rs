@@ -64,7 +64,7 @@ enum Land
     Ocean,
 }
 
-
+#[derive(Copy, Clone)]
 pub enum Nation
 {
     Aztec,

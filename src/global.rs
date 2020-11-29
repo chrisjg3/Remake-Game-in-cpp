@@ -4,7 +4,7 @@ use super::map;
 
 pub struct Global
 {
-    cash: u32,
+    cash: i32,
     research: u32,
     pub upgradeReached: bool,
     pub hexes_controlled: u8, // for winning conditions
@@ -34,7 +34,7 @@ impl Global
     }
     // fn that dictates which player loses or gains what in their cash or research or any other thing
 
-    pub fn cash_change(&mut self, change: u32)
+    pub fn cash_change(&mut self, change: i32)
     {
         self.cash += change;
     }
@@ -46,7 +46,7 @@ impl Global
 
     pub fn enough_to_buy(&self, limit: u32) -> bool
     {
-        if self.cash > limit
+        if self.cash > 0 && self.cash as u32 > limit
         {
             return true;
         }
