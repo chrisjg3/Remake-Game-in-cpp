@@ -1,9 +1,9 @@
+/.idea
 *.o
 .vscode
 *.DS_Store
-.idea
 *.idea
-/.idea
+
 
 #Added by cargo
 

@@ -28,6 +28,7 @@
     <list default="true" id="e7f519b6-3907-422f-98c1-1133632c922d" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/event_manager.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/event_manager.rs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,7 +48,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../js_practice" />
     <property name="org.rust.cargo.project.model.PROJECT_DISCOVERY" value="true" />
   </component>
   <component name="RustProjectSettings">
@@ -76,19 +77,5 @@
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
-  </component>
-  <component name="WindowStateProjectService">
-    <state x="352" y="168" width="1239" height="820" key="#Plugins" timestamp="1606190468906">
-      <screen x="72" y="27" width="1848" height="1053" />
-    </state>
-    <state x="352" y="168" width="1239" height="820" key="#Plugins/72.27.1848.1053@72.27.1848.1053" timestamp="1606190468906" />
-    <state x="692" y="350" width="584" height="408" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1606190645386">
-      <screen x="72" y="27" width="1848" height="1053" />
-    </state>
-    <state x="692" y="350" width="584" height="408" key="#com.intellij.fileTypes.FileTypeChooser/72.27.1848.1053@72.27.1848.1053" timestamp="1606190645386" />
-    <state x="649" y="252" width="672" height="678" key="search.everywhere.popup" timestamp="1606191472143">
-      <screen x="72" y="27" width="1848" height="1053" />
-    </state>
-    <state x="649" y="252" width="672" height="678" key="search.everywhere.popup/72.27.1848.1053@72.27.1848.1053" timestamp="1606191472143" />
   </component>
 </project>

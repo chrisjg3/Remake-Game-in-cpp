@@ -12,7 +12,7 @@ pub struct EventManager
 {
     turn: u32,
     map: map::Map,
-    globe: [Global; 3]
+    globe: [Global; 3],
 }
 
 impl EventManager
@@ -137,11 +137,14 @@ impl EventManager
     pub fn turn_end(&mut self) -> bool
     {
         // for all three players, calculate cash and science and change level up if reached
-
+        let game_won = false;
         // checks win condtions
+        // if there is winner, change game_won
 
         self.turn += 1;
-        true
+
+        // return if done
+        game_won
     }
 
 
