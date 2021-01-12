@@ -42,7 +42,7 @@ function redrawBoard(context, ownArr) // code for re-rendering the board
 
 }
 
-let done = false;
+let done = true;
 redrawBoard(context, ownership_arry);
 
 ownership_arry[0] = "red";
