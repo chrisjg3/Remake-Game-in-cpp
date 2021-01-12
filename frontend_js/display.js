@@ -46,9 +46,12 @@ let done = false;
 redrawBoard(context, ownership_arry);
 
 ownership_arry[0] = "red";
+let i = 0;
 
 while(!done)
 {
-    prompt("Did they win yet?");
+    prompt("Test?");
     redrawBoard(context, ownership_arry);
+    i += 1;
+    if(i > 2) { done = true; }
 }
