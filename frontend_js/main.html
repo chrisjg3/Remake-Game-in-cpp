@@ -1,18 +1,25 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <title>Game Name TBD</title>
+
+    <!-- script for info display -->
+    <script src="infoHandler.js"></script>
+
 </head>
-<body>
-    <p>Visible text</p>
-    <p class="secret">Invisible text</p>
+<body onload="passInfo()">
+
+    <h1>(Temp way to display cash) Cash: <span id="cash"></span></h1>  
 
     <!-- canvas -->
     <canvas id="canvas" width="1500px" height="850px" style="border: 1px solid #000" > </canvas>
     
-    <!-- script -->
-    <script src="display.js">
+    <!-- script for drawing -->
+    <script src="display.js"> </script>
+    
+    
+</body>
 
-</script>
 </body>
 </html>
