@@ -3,6 +3,7 @@ Steps Want to take to keep continuos development:
 
 1. Add all output boxes to js frontend (Like money display and maybe a gov tab)
 
+(For below: I think node is the best way.  Abandon browser idea.  Not like I will ship it or anything)
 2. Add sockets (one-way Rust->js) and get rust to tell javascript to change something
 
 3. Add reverse where js tells rust (js->Rust) that player wants something and have rust respond and say what changed (Rust->js)
