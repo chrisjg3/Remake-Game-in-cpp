@@ -1,0 +1,8 @@
+Steps Want to take to keep continuos development:
+
+
+1. Get Java Swing to load a 4 menu screen.
+
+2. Get Rust backend able to print something to one java menu. (Net crate)
+
+3. Revist and make plan for game
