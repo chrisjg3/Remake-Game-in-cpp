@@ -1,9 +1,17 @@
+// java swing components
 import java.awt.*;
 import java.awt.event.*;
 import java.lang.ref.Cleaner;
-
 import javax.swing.*;
 import java.util.concurrent.TimeUnit;
+
+// java net components
+import java.io.IOException;
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.io.PrintWriter;
+import java.net.Socket;
+import java.net.UnknownHostException;
 
 
 public class ModerniaFront {
@@ -12,6 +20,7 @@ public class ModerniaFront {
         new ModerniaFront();
     }
 
+    // ****   GUI Elements (Java Swing)
     JFrame f;
     JPanel topLeft;
     JPanel topRight;
@@ -19,10 +28,38 @@ public class ModerniaFront {
     JPanel bottomRight;
 
     JTextField backendLog;
+    // END GUI Elements ***
 
+
+    // ****  Net/Socket Elements
+    Socket server = null;
+    BufferedReader in;
+    // END Net Elements
+
+
+
+    // Extra text variables
     int i; // for testing, REMOVE!!!
+    int[] test_nums;
+
 
     ModerniaFront() {
+        // setting up back-front comms
+        try {
+            server = new Socket("127.0.0.1", 50000);
+        } catch(IOException e) { System.out.println("IO or Unknown Host Error thrown!"); }
+
+        // attatching to in
+        try {
+            in = new BufferedReader(new InputStreamReader( server.getInputStream() ) );
+        } catch(IOException e) { System.out.println("Buffer Read failed!"); } 
+        finally { System.out.println("Java needs to learn its do or do not, there is no try."); }
+
+        // printing rust communcation to screen
+        try {
+            System.out.println( in.readLine() );
+        } catch(IOException e) { System.out.println("Buffer Read failed!"); } 
+
         // setting up main window
         f = new JFrame();
 		f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);   
@@ -50,7 +87,7 @@ public class ModerniaFront {
         bottomRight.add( new JButton() );
         i = 0;
 
-        Timer tick = new Timer(1000, new Animator()); // timer (Animator class defined below for action)
+        Timer tick = new Timer(3000, new Animator()); // timer (Animator class defined below for action)
 		tick.start();
         System.out.println("here");
 
