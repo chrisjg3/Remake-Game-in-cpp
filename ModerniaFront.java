@@ -13,14 +13,14 @@ public class ModerniaFront {
     }
 
     JFrame f;
-    Game topLeft;
+    JPanel topLeft;
     JPanel topRight;
     JPanel bottomLeft;
     JPanel bottomRight;
 
-    JButton log;
+    JTextField backendLog;
 
-    int i = 0; // for testing, REMOVE!!!
+    int i; // for testing, REMOVE!!!
 
     ModerniaFront() {
         // setting up main window
@@ -29,7 +29,7 @@ public class ModerniaFront {
         f.setLayout( new GridLayout(2,2) ); // box of 4 panels
 
         // setting up panels and adding to window
-        topLeft = new Game();
+        topLeft = new JPanel();
         topRight = new JPanel();
         bottomLeft = new JPanel();
         bottomRight = new JPanel();
@@ -43,11 +43,12 @@ public class ModerniaFront {
         topRight.setLayout( new GridLayout(1,1) );
         bottomLeft.setLayout( new GridLayout(1,1) );
         bottomRight.setLayout( new GridLayout(1,1) );
-        // log =  new JButton();
-        topLeft.add( new JButton() );
+        backendLog =  new JTextField();
+        topLeft.add( backendLog );
         topRight.add( new JButton() );
         bottomLeft.add( new JButton() );
         bottomRight.add( new JButton() );
+        i = 0;
 
         Timer tick = new Timer(1000, new Animator()); // timer (Animator class defined below for action)
 		tick.start();
@@ -58,31 +59,32 @@ public class ModerniaFront {
         f.setVisible(true);
     }
 
-
-    public class Game extends JPanel {
+    // REMOVED BECAUSE MIGHT BE UNNECESSARY, STILL NEED TO TOTALLY REMOVE!!!
+    // public class Game extends JPanel {
         
-        @Override
-        public void paintComponent(Graphics g) {
-            super.paintComponent(g);
-            System.out.println("\n Being called!");
+    //     @Override
+    //     public void paintComponent(Graphics g) {
+    //         super.paintComponent(g);
+    //         System.out.println("\n Being called repaint!");
 
-            // log.setText("Test: " + i);
+    //         // log.setText("Test: " + i);
 
-            System.out.println(i);
+    //         System.out.println(i);
 
-            i++;
+    //         i++;
 
-            if(i == 1000) { throw new NullPointerException("demo"); } // Temporary safeguard REMOVE!!
-        }
+    //         if(i == 1000) { throw new NullPointerException("demo"); } // Temporary safeguard REMOVE!!
+    //     }
 
-    }
+    // }
+
 
     // Action Event that Timer calls to get thw windows to repaint
     public class Animator implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {
-            topLeft.repaint();
-            topLeft.add( new JButton() );
+            // topLeft.repaint();
+            backendLog.setText("Hello from backend log! i is currently: " + i++);
             System.out.println("woah!");
         }
     }
