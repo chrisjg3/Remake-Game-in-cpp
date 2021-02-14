@@ -33,13 +33,14 @@ public class ModerniaFront {
 
     // ****  Net/Socket Elements
     Socket server = null;
-    BufferedReader in;
+    InputStreamReader in;
     // END Net Elements
 
 
 
     // Extra text variables
     int i; // for testing, REMOVE!!!
+    int j; // ^ same, REMOVE!!!
     int[] test_nums;
 
 
@@ -51,14 +52,10 @@ public class ModerniaFront {
 
         // attatching to in
         try {
-            in = new BufferedReader(new InputStreamReader( server.getInputStream() ) );
+            in = new InputStreamReader( server.getInputStream() );
         } catch(IOException e) { System.out.println("Buffer Read failed!"); } 
         finally { System.out.println("Java needs to learn its do or do not, there is no try."); }
 
-        // printing rust communcation to screen
-        try {
-            System.out.println( in.readLine() );
-        } catch(IOException e) { System.out.println("Buffer Read failed!"); } 
 
         // setting up main window
         f = new JFrame();
@@ -96,32 +93,19 @@ public class ModerniaFront {
         f.setVisible(true);
     }
 
-    // REMOVED BECAUSE MIGHT BE UNNECESSARY, STILL NEED TO TOTALLY REMOVE!!!
-    // public class Game extends JPanel {
-        
-    //     @Override
-    //     public void paintComponent(Graphics g) {
-    //         super.paintComponent(g);
-    //         System.out.println("\n Being called repaint!");
-
-    //         // log.setText("Test: " + i);
-
-    //         System.out.println(i);
-
-    //         i++;
-
-    //         if(i == 1000) { throw new NullPointerException("demo"); } // Temporary safeguard REMOVE!!
-    //     }
-
-    // }
 
 
     // Action Event that Timer calls to get thw windows to repaint
     public class Animator implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {
-            // topLeft.repaint();
-            backendLog.setText("Hello from backend log! i is currently: " + i++);
+
+            // printing rust communcation to screen
+            try {
+                i = in.read();
+            } catch(IOException ioe) { System.out.println("Buffer Read failed!"); i = 77; } 
+
+            backendLog.setText("Hello from backend log! i is currently: " + i);
             System.out.println("woah!");
         }
     }
